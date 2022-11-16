@@ -4,6 +4,10 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<style>
+			*{
+				marngin: 0px;
+				padding: 0px;
+			}
 			#header{
 				border: 1px solid black;
 				height: 100px;
