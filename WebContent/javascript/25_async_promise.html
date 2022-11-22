@@ -13,14 +13,13 @@
 				let promise = new Promise(function(resolve, reject){
 					//실제 작업 내용 정의(시간을 필요로하는 작업)
 					//몇초가 걸릴지 모른다.
-					let result = true;
+					let result = false;
 					if(result){
 						resolve("success");
 					} else{
 						reject("fail");
 					}
 				});
-				
 				return promise;
 			}
 			
@@ -28,11 +27,17 @@
 			function func1(){
 				console.log("이벤트 처리 시작");
 				
-				work().then(  //호출하고 나서 then
+				//Promise 실행 방법1
+		/*		work().then(  //호출하고 나서 then
 					function(value) { console.log(value + ": 네트워크 통신 완료"); },
 					function(value) { console.log(value + ": 네트워크 통신 실패"); }
 				);
-				
+		*/		
+				//Promise 실행 방법2
+				work()
+					.then(function(value) { console.log(value + ": 네트워크 통신 완료"); })
+					.catch(function(value) { console.log(value + ": 네트워크 통신 실패"); })
+					.finally(function() { console.log("마무리")});
 				console.log("이벤트 처리 종료");
 			}
 		</script>
