@@ -9,6 +9,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 		<script>
 			function func1(){
+				console.log("func1 실행 시작");
 				//callback
 /*				timerId1 = window.setTimeout(function() {
 					console.log("알람1이 울립니다.");
@@ -19,6 +20,8 @@
 				timerId1 = window.setTimeout(() => {
 					console.log("알람3이 울립니다.");
 				}, 3000);
+				
+				console.log("func1실행 종료")
 			}
 			
 			function alarm(){
